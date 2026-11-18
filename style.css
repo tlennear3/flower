@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle, #35103d, #100016);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+h1 {
+    color: #ff9bd2;
+    font-family: Georgia, serif;
+    text-shadow: 0 0 15px #ff1493;
+    margin-top: 50px;
+}
+
+/* Flower */
+.flower {
+    position: relative;
+    width: 220px;
+    height: 350px;
+    margin-top: 30px;
+}
+
+/*petals*/
+
+.petals {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: 20px;
+    top: 0;
+    z-index: 2;
+    animation: bloom 2.5s ease-out 1.5s both;
+}
+
+.petal {
+    position: absolute;
+    width: 75px;
+    height: 100px;
+    left: 52px;
+    top: 0;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #ffb6e6, #ff1493, #b00075);
+    box-shadow: 0 0 10px #ff69b4,
+    0 0 25px #ff1493,
+    0 0 45px #ff1493;
+    transform-origin: 37px 90px;
+}
+
+.p1 { transform: rotate(0deg);}
+.p2 { transform: rotate(60deg);}
+.p3 { transform: rotate(120deg);}
+.p4 { transform: rotate(180deg);}
+.p5 { transform: rotate(240deg);}
+.p6 { transform: rotate(300deg);}
+
+/* Center */
+.center {
+    position: absolute;
+    top: 70px;
+    left: 89px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffe66d;
+    box-shadow: 0 0 15px #fff176, 0 0 30px #ffcc00;
+    z-index: 5;
+    transform: bloom 2.5s ease-out 1.5s both;
+}
+
+/* Stem */
+
+.stem {
+    position: absolute;
+    top: 125px;
+    left: 105px;
+    width: 9px;
+    height: 200px;
+    background: #32cd65;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #39ff75;
+    transform-origin: bottom;
+    animation: grow 2s ease-out both;
+}
+
+.leaf {
+    position: absolute;
+    width: 65px;
+    height: 35px;
+    background: linear-gradient(45deg, #08752b, #62ff83);
+    box-shadow: 0 0 15px #19ff65;
+    border-radius: 100% 0 100% 0;
+    animation: fade 1s ease-out 1.5s both;
+}
+
+.left {
+    top: 250px;
+    left: 42px;
+    transform: scaleX(-1);
+}
+
+.right {
+    top: 225px;
+    left: 112px;
+    transform: rotate(75deg);
+}
+
+/* Animations */
+@keyframes bloom {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes fade {
+    from { opacity: 0;}
+    to {opacity: 1;}
+}
